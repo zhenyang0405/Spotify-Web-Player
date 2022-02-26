@@ -1,0 +1,129 @@
+.now-playing__container {
+    background-color: rgb(26, 26, 26);
+    width: 100vw;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+}
+
+.now-playing__status {
+    margin-bottom: 1em;
+}
+
+.now-playing__cover {
+    position: fixed;
+    bottom: 10px;
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: right;
+    width: 80px;
+    height: 80px;
+}
+
+.no-music {
+    width: 40px;
+    height: 40px;
+}
+
+.now-playing__side {
+    position: fixed;
+    bottom: 35px;
+    margin-left: 110px;
+    width: 80%;
+}
+
+.now-playing__name-container {
+    width: 47%;
+    height: 40px;
+    /* background-color: cadetblue; */
+    
+}
+
+.now-playing__name {
+    font-size: 20px;
+    font-weight: 500;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    margin-bottom: 0.2em;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* position: fixed; */
+    /* bottom: 40px; */
+}
+
+.now-playing__artist {
+    font-size: 14px;;
+    font-weight: 300;
+    position: fixed;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+}
+
+.now-playing__play-progress {
+    width: 50%;
+    height: 50px;
+    left: 48%;
+    /* position: fixed; */
+    top: 0;
+    position: absolute;
+    display: flex;
+    /* background-color: rgb(11, 184, 155); */
+}
+
+.btn-player {
+    /* background-color: turquoise; */
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    width: 30%;
+}
+
+.btn-spotify {
+    cursor: pointer;
+    margin-left: 5%;
+}
+
+/* .btn-spotify__fast-forward {
+    width: 40px;
+    height:40px;
+} */
+ 
+.btn-spotify:active {
+    position:relative;
+    top:1px;
+}
+
+img { background: transparent; }
+
+.playpause {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px
+}
+
+.fast-forward {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.rewind {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.progress-bar__container {
+    width: 200px;
+    height: 10px;
+    /* background-color: darkgoldenrod; */
+    margin-top: 5px;
+    border-radius: 25px;
+}
+
+input[type="range"] {
+    width: 100%;
+}

@@ -1,0 +1,221 @@
+.search-container__result {
+    display: block;
+    margin-left: 3%;
+    margin-right: 2%;
+    margin-bottom: 3%;
+    margin-top: 10px;
+}
+
+.title__more-page__container {
+    cursor: default;
+    display: flex;
+    position: relative;
+}
+
+.title__more-page {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.go-back__more-page {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.see-more-box-images__result {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin-top: 1%;
+    gap: 25px;
+    margin-left: 10px;
+}
+
+.box-container__more-page {
+    width: 11%;
+    background-color: #343434;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.box-image-container__more-page {
+    position: relative;
+    width: 100%;
+    height: 70%;
+}
+
+.box-image-container__more-page__artist {
+    position: relative;
+    width: 100%;
+    height: 80%;
+}
+
+
+@media (width < 1900px) {
+    .see-more-box-images__result {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        margin-top: 1%;
+        gap: 20px;
+        margin-left: 10px;
+    }
+
+    .box-container__more-page {
+        width: 13%;
+        background-color: #343434;
+        padding: 10px;
+        border-radius: 10px;
+        position: relative;
+    }
+}
+
+@media (width < 1600px) {
+    .box-container__more-page {
+        width: 15%;
+        background-color: #343434;
+        padding: 10px;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .box-image-container__more-page {
+        position: relative;
+        width: 100%;
+        height: 80%；
+    }
+}
+
+@media (width < 1300px) {
+    .box-container__more-page {
+        width: 18%;
+        background-color: #343434;
+        padding: 10px;
+        border-radius: 10px;
+        position: relative;
+    }
+}
+
+@media (width < 1100px) {
+    .box-container__more-page {
+        width: 22%;
+        background-color: #343434;
+        padding: 10px;
+        border-radius: 10px;
+        position: relative;
+    }
+}
+
+@media (width < 900px) {
+    .box-container__more-page {
+        width: 29%;
+        background-color: #343434;
+        padding: 10px;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .title__more-page {
+        margin-left: 20px;
+        font-size: 26px;;
+    }
+}
+
+@media (width < 700px) {
+    .box-container__more-page {
+        width: 45%;
+        background-color: #343434;
+        padding: 10px;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .title__more-page {
+        margin-left: 20px;
+        font-size: 22px;;
+    }
+}
+
+.box-image__album-picture__result {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.box-image__play-button__result {
+    position: absolute;
+    width: 32.5%;
+    height: 31%;
+    margin-left: 35%;
+    margin-top: 37%;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.box-image__play-button__result:active {
+    transform: translateY(10px);
+}
+
+.box-image-container__more-page:hover .box-image__album-picture__result {
+    opacity: 0.3;
+}
+
+.box-image-container__more-page:hover .box-image__play-button__result{
+    opacity: 1;
+}
+
+.box-image-container__more-page__artist:hover .box-image__album-picture__result {
+    opacity: 0.3;
+}
+
+.box-image-container__more-page__artist:hover .box-image__play-button__result {
+    opacity: 1;
+}
+
+.box-song-name__result {
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap ;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.box-song-name__result:hover {
+    cursor: default;
+}
+
+.box-bottom__result {
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.box-bottom__result .box-album-name__result {
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.box-album-name__result:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.box-artist-name__result {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 5%;
+    white-space: nowrap ;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.box-artist-name__result:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

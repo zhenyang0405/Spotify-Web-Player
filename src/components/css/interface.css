@@ -1,0 +1,140 @@
+.side-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+}
+
+.side-bar__menu {
+    width: 10vw;
+    height: 100vh;
+    background-color: black;
+    margin-left: 0px;
+    padding-left: 0;
+}
+
+.logo {
+    display: flex;
+    width: auto;
+    height: 40px;
+    margin: 20px auto;
+    
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+@media (width < 1400px) {
+    .icon {
+        width: 40px;
+        height: 40px;
+        margin-left: 18%;
+    }
+
+}
+
+@media (width < 1000px) {
+    .icon {
+        width: 40px;
+        height: 40px;
+        margin-left: 10%;
+    }
+
+}
+
+@media (width < 900px) {
+    .icon {
+        width: 30px;
+        height: 30px;
+        margin-left: 8%;
+    }
+}
+
+@media (width < 650px) {
+    .icon {
+        width: 25px;
+        height: 25px;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.side-bar__main-navigation {
+    margin-top: 30px;
+    padding-left: 10%;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 10px;
+    color: white;
+    font-size: 22px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* a:focus, a:active {
+    text-decoration: underline;
+} */
+
+.link-logo {
+    width: 20px;
+    height: 20px;
+    margin-left: 16px;
+}
+
+.side-bar__link-result {
+    display: flex;
+    width: 90vw;
+    /* width: 1340px; */
+    height: 100vh;
+}
+
+.link-result__outlet-area {
+    /* margin-top: 10px;
+    margin-left: 20px; */
+    overflow-y: scroll;
+    width: 100vw;
+    height: 91.3vh;
+    /* margin-right: 2%; */
+}
+
+.link-result__outlet-area::-webkit-scrollbar {
+    width: 0 !important;
+}
+
+
+/* .bottom-player {
+    margin-left: 10%;
+} */
+
+.user-profile {
+    position: fixed;
+    bottom: 0;
+    width: 130px;
+}
+
+.user-profile__img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-left: 45px;
+}
+
+.user-profile__name {
+    font-size: 20px;
+    /* width: 130px; */
+    margin-left: 5px;
+    margin-top: 5px;;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.bottom-player {
+    z-index: 1;
+    position: absolute;
+}

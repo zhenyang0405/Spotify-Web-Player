@@ -1,0 +1,99 @@
+.track-container__result {
+    display: flex;
+    height: 100%;
+}
+
+.track-left__result {
+    width: 30%;
+    margin: 2%;
+}
+
+/* .track-left-image__result {
+    margin-top: 10%;
+} */
+
+.track-right__result {
+    width: 100%;
+}
+
+.track-right-section-one__result {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.track-info-container {
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    bottom: 6%;
+}
+
+.track-name__result {
+    font-size: 100px;
+    
+}
+
+.artist-name__result {
+    font-size: 26px;
+    margin-top: 2%;
+    font-weight: 400;
+}
+
+.album-info__result {
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 1%;
+}   
+
+.track-right-section-two__result {
+    width: 100%;
+    height: 100%;
+    /* background-color: darkgreen; */
+}
+
+.box-information__container {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 80%;
+    height: 80%;
+}
+
+.top {
+    display: flex;
+    height: 50%;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.top-first {
+    width: 33.33%;
+    height: 100%;
+    margin: 0;
+    padding-top: 6%;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.top-second {
+    width: 33.33%;
+    height: 100%;
+    margin: 0;
+    padding-top: 6%;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.top-third {
+    width: 33.33%;
+    height: 100%;
+    margin: 0;
+    padding-top: 6%;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.bottom {
+    display: flex;
+    height: 50%;
+    width: 100%;
+}

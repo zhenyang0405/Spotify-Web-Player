@@ -1,0 +1,450 @@
+.loading-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.loading {
+    position: absolute;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+}
+
+.home-container {
+    width: 90vw;
+    height: 100%;
+    /* margin-left: 0; */
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #222222;
+}
+
+.home-greetings {
+    color: #1bd954;
+}
+
+.recent-played {
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+.recently-played__container {
+    /* width: 89%; */
+    margin-top: 2%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+.recently-played__card {
+    position: relative;
+    display: flex;
+    width: 32.4%;
+    height: 130px;
+    background-color: #343434;
+    border-radius: 10px;
+}
+
+.recently-played__card:hover {
+    background:rgba(255, 255, 255, 0.2);
+}
+
+.recent-played__card__image {
+    width: auto;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.recent-played__card__name-type {
+    margin-left: 3%;
+    margin-top: 2%;
+    position: relative;
+}
+
+.recent-played__song-name {
+    font-size: 20px;
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.recent-played__type {
+    font-size: 16px;    
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+.recent-played__play-button {
+    width: 10%;
+    height: auto;
+    position: absolute;
+    right: 2%;
+    bottom: 5%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.recently-played__card:hover .recent-played__play-button {
+    opacity: 1;
+}
+
+/************** Features Playlist **************/
+
+.features-playlist {
+    width: 89%;
+    margin-top: 40px;
+    font-weight: 600;
+}
+
+.features-playlist__container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* width: 89%; */
+    height: 70%;
+    margin-top: 20px;
+    /* background-color: rgb(104, 94, 4); */
+}
+
+.features-playlist__card {
+    position: relative;
+    width: 15.6%;
+    height: 30%;    
+    /* background-color: darkcyan; */
+}
+
+.features-playlist__image-container {
+    width: auto;
+    height: auto;
+    position: relative;
+    /* background-color: lightcoral; */
+}
+
+.features-playlist__card__image {
+    /* display: flexbox; */
+    width: 100%;
+    height: 35%;
+}
+
+.features-playlist__text-container {
+    text-align: center;
+    width:100%;
+    /* background-color: darkgoldenrod; */
+}
+
+.features-playlist__name {
+    font-size: 22px;
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.features-playlist__owner {
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+.features-playlist__play-button {
+    width: 18.5%;
+    height: 18%;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.features-playlist__image-container:hover .features-playlist__play-button {
+    opacity: 1;
+}
+
+@media (width < 1781px) {
+    .features-playlist__card {
+        position: relative;
+        width: 15.4%;
+        height: 30%;
+    }
+}
+
+@media (width < 1631px) {
+    .recently-played__card {
+        position: relative;
+        display: flex;
+        width: 32.2%;
+        height: 130px;
+        background-color: #343434;
+        border-radius: 10px;
+    }
+
+    .features-playlist__card {
+        position: relative;
+        width: 15.4%;
+        height: 30%;
+    }
+}
+
+@media (width < 1506px) {
+    .features-playlist__card {
+        position: relative;
+        width: 15.3%;
+        height: 30%;
+    }
+}
+
+@media (width < 1500px) {
+    .features-playlist__card {
+        position: relative;
+        width: 18.6%;
+        height: 30%;    
+    }
+
+    .recent-played__song-name {
+        font-size: 18px;
+        font-weight: 600;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .features-playlist__name {
+        font-size: 22px;
+        font-weight: 600;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (width < 1351px) {
+    .recently-played__card {
+        position: relative;
+        display: flex;
+        width: 32%;
+        height: 130px;
+        background-color: #343434;
+        border-radius: 10px;
+    }
+}
+
+@media (width < 1314px) {
+    .features-playlist__card {
+        position: relative;
+        width: 18.4%;
+        height: 30%;
+    }
+}
+
+@media (width < 1200px) {
+    .features-playlist__card {
+        position: relative;
+        width: 23.4%;
+        height: 30%;    
+    }
+
+    .recent-played__song-name {
+        font-size: 18px;
+        font-weight: 600;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .recent-played__type {
+        font-size: 14px;    
+        margin-top: 10px;
+        font-weight: 300;
+    }
+
+    .features-playlist__name {
+        font-size: 24px;
+        font-weight: 600;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (width < 1155px) {
+    .recently-played__card {
+        position: relative;
+        display: flex;
+        width: 31.7%;
+        height: 130px;
+        background-color: #343434;
+        border-radius: 10px;
+    }
+}
+
+@media (width < 1086px) {
+    .features-playlist__card {
+        position: relative;
+        width: 31.5%;
+        height: 30%;
+    }
+}
+
+@media (width < 1000px) {
+    .recently-played__card {
+        position: relative;
+        display: flex;
+        width: 48%;
+        height: 130px;
+        background-color: #343434;
+        border-radius: 10px;
+    }
+
+    .features-playlist__name {
+        font-size: 20px;
+        font-weight: 600;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+}
+
+@media (width < 853px) {
+    .features-playlist__card {
+        position: relative;
+        width: 31.2%;
+        height: 30%;
+    }
+}
+
+@media (width < 800px) {
+    .home-greetings {
+        font-size: 36px;
+    }
+
+    .features-playlist {
+        margin-top: 10%;
+    }
+
+    .features-playlist__card {
+        position: relative;
+        width: 31.1%;
+        height: 30%;    
+    }
+
+    .recently-played__card {
+        position: relative;
+        display: flex;
+        width: 48%;
+        height: 100px;
+        background-color: #343434;
+        border-radius: 10px;
+    }
+
+    .recent-played__play-button {
+        width: 7%;
+        height: auto;
+        position: absolute;
+        right: 2%;
+        bottom: 5%;
+        opacity: 0;
+        transition: all 0.5s;
+    }
+}
+
+@media (width < 708px) {
+    .features-playlist__card {
+        position: relative;
+        width: 30.6%;
+        height: 30%;
+    }
+}
+
+@media (width < 600px) {
+    .home-greetings {
+        font-size: 28px;
+    }
+
+    .features-playlist {
+        margin-top: 10%;
+        font-size: 20px;
+    }
+
+    .features-playlist__card {
+        position: relative;
+        width: 47%;
+        height: 35%;    
+    }
+
+    .recent-played {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+    .recently-played__card {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100px;
+        background-color: #343434;
+        border-radius: 10px;
+    }
+
+    .recent-played__song-name {
+        font-size: 16px;
+        font-weight: 600;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .recent-played__type {
+        font-size: 12px;    
+        margin-top: 10px;
+        font-weight: 300;
+    }
+}
+
+
+/**************** User Playlists ***************/
+
+.my-playlist__container {
+    display: flex;
+    gap: 20px;
+    width: 86%;
+    height: 30%;
+    margin-top: 20px;
+    /* background-color: rgb(155, 192, 119); */
+}
+
+.my-playlist__card {
+    width: 30%;
+    /* background-color: #343434; */
+    /* padding: 10px; */
+    border-radius: 10px;
+    position: relative;
+}
+
+.my-playlist__play-button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 42%;
+    top: 33%
+}

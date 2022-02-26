@@ -1,0 +1,236 @@
+.loading-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.loading {
+    position: absolute;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+}
+
+.user-playlist__container {
+    margin: 30px;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.user-playlist__title {
+    font-weight: 600;
+}
+
+.user-playlist__card-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+    /* background-color: deepskyblue; */
+}
+
+.user-playlist__card {
+    width: 15%;
+    height: 350px;
+    /* background-color: goldenrod; */
+}
+
+/* .user-playlist__card:hover {
+    background:rgba(255, 255, 255, 0.1);
+    opacity: 1;
+    border-radius: 10px;
+} */
+
+.user-playlist__image-container {
+    width: 100%;
+    height: 70%;
+    position: relative;
+}
+
+.user-playlist__basic-info {
+    text-align: center;
+}
+
+.user-playlist__name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-playlist__owner {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.user-playlist__total-tracks {
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    opacity: 0;
+    transition: all 0.3s;
+    /* width: 50%;
+    background-color: #1DB954;
+    color: black;
+    border-radius: 15px;
+    text-align: center; */
+}
+
+.user-playlist__image:hover {
+    opacity: 0.2;
+}
+
+.user-playlist__image-container:hover .user-playlist__total-tracks {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.user-playlist__name:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.user-playlist__play-button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.user-playlist__image-container:hover .user-playlist__play-button {
+    opacity: 1;
+}
+
+@media (width < 1500px) {
+    .user-playlist__container {
+        margin: 30px 5% 30px 10%;
+        width: 100%;
+        max-width: 1200px;
+        min-height: 100vh;
+    }
+
+    .user-playlist__card-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .user-playlist__card {
+        width: 20%;
+        height: 350px;
+    }
+}
+
+@media (width < 1250px) {
+    .user-playlist__container {
+        margin: 30px 5% 30px 10%;
+        width: 100%;
+        max-width: 1000px;
+        min-height: 100vh;
+    }
+
+    .user-playlist__card-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .user-playlist__card {
+        width: 24%;
+        height: 350px;
+    }
+}
+
+@media (width < 1000px) {
+    .user-playlist__container {
+        margin: 30px 5% 30px 10%;
+        width: 100%;
+        max-width: 900px;
+        min-height: 100vh;
+    }
+
+    .user-playlist__card-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .user-playlist__card {
+        width: 27%;
+        height: 350px;
+    }
+}
+
+@media (width < 800px) {
+    .user-playlist__container {
+        margin: 30px 5% 30px 10%;
+        width: 100%;
+        max-width: 700px;
+        max-height: 100vh;
+    }
+
+    .user-playlist__card-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .user-playlist__card {
+        width: 35%;
+        height: 350px;
+    }
+
+    .user-playlist__title {
+        font-size: 28px;
+        font-weight: 600;
+    }
+}
+
+@media (width < 650px) {
+    .user-playlist__container {
+        margin: 30px 5% 30px 10%;
+        width: 100%;
+        max-width: 500px;
+        max-height: 100vh;
+    }
+
+    .user-playlist__card-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .user-playlist__card {
+        width: 38%;
+        height: 270px;
+    }
+}

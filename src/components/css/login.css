@@ -1,0 +1,21 @@
+.login-page__container {
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+.login-page__spotify-logo {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    top: 40%;
+    margin-left: 30px;
+}
+
+.login-page__button {
+    /* position: absolute;
+    margin: 0; */
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

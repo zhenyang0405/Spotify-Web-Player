@@ -1,0 +1,324 @@
+.artist-back {
+    width: 100%;
+    height: 100%;
+    background-color: #222222;
+}
+
+.album-upper-box__result {
+    display: flex;
+    position: relative;
+    /* width: 100%; */
+    height: 30%;
+    background-color: #222222;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+.album-upper-box__name__result {
+    position: absolute;
+    /* background-color: blueviolet; */
+    bottom: 20px;
+    left: 330px;
+}
+
+.album-image__result {
+    width: 300px;
+    height: 300px;
+    filter: drop-shadow(0 0 0.75rem black);
+}
+
+.album-name__result {
+    margin-left: 6px;
+    filter: drop-shadow(0 0 20rem black);
+    text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* background-color: blueviolet; */
+}
+
+.album-basic-info__result {
+    font-weight: 300;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.album-bottom-box__title-name__result {
+    position: relative;
+    margin-top: 20px;
+}
+
+.title-name__numbering__result {
+    margin-left: 4.5%;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 200;
+}
+
+.title-name__name__result {
+    margin-left: 5%;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 200;
+}
+
+.title-name__duration__result {
+    float: right;
+    margin-right: 9.5%;
+    margin-top: 9px;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 200;
+}
+
+.divider {
+    margin-top: 1%;
+    margin-left: 2%;
+    width: 95%;
+    size: 1;
+}
+
+.album-bottom-box__track-name__result {
+    position: relative;
+    margin-top: 10px;
+}
+
+.track-name__box__result {
+    display: flex;
+    margin-left: 2%;
+    margin-bottom: 20px;
+    /* background-color: blueviolet; */
+    width: 95%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.track-name__box__result:hover  {
+    background:rgba(255, 255, 255, 0.1);
+    opacity: 1;
+    border-radius: 10px;
+}
+
+.track-name__index-box__result {
+    width: 10px;
+    height: 40px;
+    display: inline;
+    margin-left: 3.5%;
+}
+
+.track-name__index__result {
+    padding-top: 60%;
+    float: right;
+    font-size: 1em;
+}
+
+.track-name__song-artist__result {
+    display: flex;
+    flex-direction: column;
+    margin-left: 6%;
+}
+ 
+.track-name__name__result {
+    font-size: 26px;
+    font-weight: 500;
+} 
+
+.track-name__artist__result {
+    font-size: 16px;
+    font-weight: 100;
+    margin-top: 3%;
+}
+
+.track-name__duration__result {
+    position: absolute;
+    right: 10%;
+    padding-top: 0.5%;
+}
+
+.track-name__play-button__result {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 4%;
+    margin-top: 0.5%;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.track-name__box__result:hover .track-name__play-button__result {
+    opacity: 1;
+}
+
+@media (width < 800px) {
+    .album-upper-box__result {
+        display: flex;
+        position: relative;
+        /* width: 100%; */
+        height: 30%;
+        background-color: #222222;
+        padding: 20px;
+    }
+
+    .album-image__result {
+        width: 40%;
+        height: 100%;
+        filter: drop-shadow(0 0 0.75rem black);
+    }
+
+    .album-upper-box__name__result {
+        position: absolute;
+        /* background-color: blueviolet; */
+        bottom: 20px;
+        left: 290px;
+    }
+
+    .album-name__result {
+        font-size: 38px;
+        margin-left: 6px;
+        filter: drop-shadow(0 0 20rem black);
+        text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* background-color: blueviolet; */
+    }
+
+    .title-name__duration__result {
+        float: right;
+        margin-right: 14.5%;
+        margin-top: 3px;
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 200;
+    }
+
+    .track-name__name__result {
+        font-size: 22px;
+        font-weight: 500;
+    } 
+    
+    .track-name__artist__result {
+        font-size: 14px;
+        font-weight: 100;
+        margin-top: 3%;
+    }
+
+    .track-name__duration__result {
+        position: absolute;
+        right: 15%;
+        padding-top: 1.5%;
+        font-size: 18px;
+    }
+
+    .track-name__play-button__result {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        right: 4%;
+        margin-top: 1%;
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+}
+
+@media (width < 700px) {
+    .album-upper-box__result {
+        display: flex;
+        position: relative;
+        /* width: 100%; */
+        height: 30%;
+        background-color: #222222;
+        padding: 20px;
+    }
+
+    .album-image__result {
+        width: 200px;
+        height: 200px;
+        filter: drop-shadow(0 0 0.75rem black);
+    }
+
+    .album-upper-box__name__result {
+        position: absolute;
+        /* background-color: blueviolet; */
+        bottom: 20px;
+        left: 230px;
+    }
+
+    .album-name__result {
+        font-size: 26px;
+        margin-left: 6px;
+        filter: drop-shadow(0 0 20rem black);
+        text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* background-color: blueviolet; */
+    }
+
+    .album-basic-info__result {
+        font-weight: 300;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    .track-name__song-artist__result {
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 6%;
+        
+    }
+
+    .track-name__name__result {
+        font-size: 22px;
+        font-weight: 500;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    } 
+
+    .track-name__artist__result {
+        font-size: 14px;
+        font-weight: 100;
+        margin-top: 1%;
+    }
+
+    .track-name__duration__result {
+        position: absolute;
+        right: 15%;
+        padding-top: 1.5%;
+        font-size: 18px;
+    }
+
+    .track-name__play-button__result {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        right: 4%;
+        margin-top: 1%;
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+
+    .title-name__duration__result {
+        float: right;
+        margin-right: 14.5%;
+        margin-top: 0;
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 200;
+    }
+}
