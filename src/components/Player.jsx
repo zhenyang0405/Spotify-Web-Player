@@ -31,41 +31,6 @@ const Player = (props) => {
     const [isPaused, setIsPaused] = useState(true);
     const [currentTrack, setCurrentTrack] = useState(track);
 
-    // useEffect(() => {
-    //     const getRecentTrack = async () => {
-    //         const response = await axios.get(`https://api.spotify.com/v1/me/player/recently-played?limit=1`,
-    //         {
-    //             headers: {
-    //                 Accept: 'application/json',
-    //                 Authorization: 'Bearer ' + props.token,
-    //                 'Content-Type': 'application/json'
-    //             }
-    //         }
-    //         )
-    //         console.log(response);
-
-    //         let info = await response.data.items[0].track;
-    //         setCurrentTrack({
-    //             name: info.name,
-    //             album: {
-    //                 images: [
-    //                     {
-    //                         url: info.album.images[0].url
-    //                     }
-    //                 ]
-    //             },
-    //             artists: [
-    //                 {
-    //                     name: info.artists[0].name
-    //                 }
-    //             ]
-    //         })
-    //         setIsPaused(true);
-    //     }
-    //     getRecentTrack();
-    // }, []);
-
-
     useEffect(() => {
         const script = document.createElement("script");
         script.src = "https://sdk.scdn.co/spotify-player.js";

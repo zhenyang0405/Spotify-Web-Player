@@ -16,7 +16,6 @@ const Home = (props) => {
     const { height, width } = useWindowDimensions();
     
     const [arrRecentPlayed, setArrRecentPlayed] = useState([]);
-    // const [arrMyPlaylist, setArrMyPlaylist] = useState([]);
 
     const [arrFeaturesTwelveCard, setArrFeaturesTwelveCard] = useState([]);
     const [arrFeaturesTenCard, setArrFeaturesTenCard] = useState([]);

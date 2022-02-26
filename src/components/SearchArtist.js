@@ -20,34 +20,8 @@ const SearchArtist = (props) => {
     const [arrTop10, setArrTop10] = useState([]);
 
     // GET Albums
-    
-    const [arrCompilation, setArrCompilation] = useState([]);
-
-    const [isCompilationMore, setIsCompilationMore] = useState(false);
-    const [arrCompilationTwoCard, setArrCompilationTwoCard] = useState([]);
-    const [arrCompilationThreeCard, setArrCompilationThreeCard] = useState([]);
-    const [arrCompilationFourCard, setArrCompilationFourCard] = useState([]);
-    const [arrCompilationFiveCard, setArrCompilationFiveCard] = useState([]);
-    const [arrCompilationSixCard, setArrCompilationSixCard] = useState([]);
-    const [arrCompilationSevenCard, setArrCompilationSevenCard] = useState([]);
     const [arrCompilationEightCard, setArrCompilationEightCard] = useState([]);
-
-    const [isMore, setIsMore] = useState(false);
-    const [arrAlbumTwoCard, setArrAlbumTwoCard] = useState([]);
-    const [arrAlbumThreeCard, setArrAlbumThreeCard] = useState([]);
-    const [arrAlbumFourCard, setArrAlbumFourCard] = useState([]);
-    const [arrAlbumFiveCard, setArrAlbumFiveCard] = useState([]);
-    const [arrAlbumSixCard, setArrAlbumSixCard] = useState([]);
-    const [arrAlbumSevenCard, setArrAlbumSevenCard] = useState([]);
     const [arrAlbumEightCard, setArrAlbumEightCard] = useState([]);
-
-    const [isSingleMore, setIsSingleMore] = useState(false);
-    const [arrSingleTwoCard, setArrSingleTwoCard] = useState([]);
-    const [arrSingleThreeCard, setArrSingleThreeCard] = useState([]);
-    const [arrSingleFourCard, setArrSingleFourCard] = useState([]);
-    const [arrSingleFiveCard, setArrSingleFiveCard] = useState([]);
-    const [arrSingleSixCard, setArrSingleSixCard] = useState([]);
-    const [arrSingleSevenCard, setArrSingleSevenCard] = useState([]);
     const [arrSingleEightCard, setArrSingleEightCard] = useState([]);
 
     // POST selected Track
@@ -166,426 +140,26 @@ const SearchArtist = (props) => {
             )
             // console.log(response);
 
-            setArrAlbumTwoCard([]);
-            setArrAlbumThreeCard([]);
-            setArrAlbumFourCard([]);
-            setArrAlbumFiveCard([]);
-            setArrAlbumSixCard([]);
-            setArrAlbumSevenCard([]);
             setArrAlbumEightCard([]);
 
             let albums = response.data.items;
 
             for (let i in albums) {
-                if (i >= 0 && i < 2) {
-                    setMaxObtainAlbum(parseInt(i) + 1);
-                    setArrAlbumTwoCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumThreeCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumFourCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumFiveCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumSixCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumSevenCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumEightCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                } else if (i >= 2 && i < 3) {
-                    setMaxObtainAlbum(parseInt(i) + 1);
-                    setArrAlbumThreeCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumFourCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumFiveCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumSixCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumSevenCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumEightCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                } else if (i >= 3 && i < 4) {
-                    setMaxObtainAlbum(parseInt(i) + 1);
-                    setArrAlbumFourCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumFiveCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumSixCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumSevenCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumEightCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                } else if (i >= 4 && i < 5) {
-                    setMaxObtainAlbum(parseInt(i) + 1);
-                    setArrAlbumFiveCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumSixCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumSevenCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumEightCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                } else if (i >= 5 && i < 6) {
-                    setMaxObtainAlbum(parseInt(i) + 1);
-                    setArrAlbumSixCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumSevenCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumEightCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                } else if (i >= 6 && i < 7) {
-                    setMaxObtainAlbum(parseInt(i) + 1);
-                    setArrAlbumSevenCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                    setArrAlbumEightCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                } else if (i >= 7 && i < 8) {
-                    setMaxObtainAlbum(parseInt(i) + 1);
-                    setArrAlbumEightCard(prev => [...prev, {
-                        'year': extractYear(albums[i].release_date),
-                        'month': extractMonth(albums[i].release_date),
-                        'day': extractDay(albums[i].release_date),
-                        'album': {
-                            'album_type': albums[i].album_type,
-                            'id': albums[i].id,
-                            'name': albums[i].name,
-                            'release_date': albums[i].release_date,
-                            'total_tracks': albums[i].total_tracks,
-                            'uri': albums[i].uri
-                        },
-                        'image': albums[i].images[0].url
-                    }]);
-                } else {
-                    setIsMore(true);
-                }
+                setMaxObtainAlbum(parseInt(i) + 1);
+                setArrAlbumEightCard(prev => [...prev, {
+                    'year': extractYear(albums[i].release_date),
+                    'month': extractMonth(albums[i].release_date),
+                    'day': extractDay(albums[i].release_date),
+                    'album': {
+                        'album_type': albums[i].album_type,
+                        'id': albums[i].id,
+                        'name': albums[i].name,
+                        'release_date': albums[i].release_date,
+                        'total_tracks': albums[i].total_tracks,
+                        'uri': albums[i].uri
+                    },
+                    'image': albums[i].images[0].url
+                }]);
             }
         }
         getArtistAlbum();
@@ -613,426 +187,27 @@ const SearchArtist = (props) => {
             }
             )
 
-            setArrSingleTwoCard([]);
-            setArrSingleThreeCard([]);
-            setArrSingleFourCard([]);
-            setArrSingleFiveCard([]);
-            setArrSingleSixCard([]);
-            setArrSingleSevenCard([]);
             setArrSingleEightCard([]);
 
             let singles = response.data.items;
 
             for (let i in singles) {
-                if (i >= 0 && i < 2) {
-                    setMaxObtainSingle(parseInt(i) + 1);
-                    setArrSingleTwoCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleThreeCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleFourCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleFiveCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleSixCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleSevenCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleEightCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                } else if (i >= 2 && i < 3) {
-                    setMaxObtainSingle(parseInt(i) + 1);
-                    setArrSingleThreeCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleFourCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleFiveCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleSixCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleSevenCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleEightCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                } else if (i >= 3 && i < 4) {
-                    setMaxObtainSingle(parseInt(i) + 1);
-                    setArrSingleFourCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleFiveCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleSixCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleSevenCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleEightCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                } else if (i >= 4 && i < 5) {
-                    setMaxObtainSingle(parseInt(i) + 1);
-                    setArrSingleFiveCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleSixCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleSevenCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleEightCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                } else if (i >= 5 && i < 6) {
-                    setMaxObtainSingle(parseInt(i) + 1);
-                    setArrSingleSixCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleSevenCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleEightCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                } else if (i >= 6 && i < 7) {
-                    setMaxObtainSingle(parseInt(i) + 1);
-                    setArrSingleSevenCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                    setArrSingleEightCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                } else if (i >= 7 && i < 8) {
-                    setMaxObtainSingle(parseInt(i) + 1);
-                    setArrSingleEightCard(prev => [...prev, {
-                        'year': extractYear(singles[i].release_date),
-                        'month': extractMonth(singles[i].release_date),
-                        'day': extractDay(singles[i].release_date),
-                        'album': {
-                            'album_type': singles[i].album_type,
-                            'id': singles[i].id,
-                            'name': singles[i].name,
-                            'release_date': singles[i].release_date,
-                            'total_tracks': singles[i].total_tracks,
-                            'uri': singles[i].uri
-                        },
-                        'image': singles[i].images[0].url
-                    }]);
-                } else {
-                    setIsSingleMore(true);
-                }
+                setMaxObtainSingle(parseInt(i) + 1);
+                setArrSingleEightCard(prev => [...prev, {
+                    'year': extractYear(singles[i].release_date),
+                    'month': extractMonth(singles[i].release_date),
+                    'day': extractDay(singles[i].release_date),
+                    'album': {
+                        'album_type': singles[i].album_type,
+                        'id': singles[i].id,
+                        'name': singles[i].name,
+                        'release_date': singles[i].release_date,
+                        'total_tracks': singles[i].total_tracks,
+                        'uri': singles[i].uri
+                    },
+                    'image': singles[i].images[0].url
+                }]);
+
             }
         }
         getArtistSingle();
@@ -1058,441 +233,26 @@ const SearchArtist = (props) => {
             }
             )
 
-            setArrCompilationTwoCard([]);
-            setArrCompilationThreeCard([]);
-            setArrCompilationFourCard([]);
-            setArrCompilationFiveCard([]);
-            setArrCompilationSixCard([]);
-            setArrCompilationSevenCard([]);
             setArrCompilationEightCard([]);
 
             let compilation = response.data.items;
 
             for (let i in compilation) {
-                if (i >= 0 && i < 2) {
-                    setMaxObtainCompilation(parseInt(i) + 1);
-                    setArrCompilationTwoCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationThreeCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationFourCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationFiveCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationSixCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationSevenCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationEightCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                } else if (i >= 2 && i < 3) {
-                    setMaxObtainCompilation(parseInt(i) + 1);
-                    setArrCompilationThreeCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationFourCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationFiveCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationSixCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationSevenCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationEightCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                } else if (i >= 3 && i < 4) {
-                    setMaxObtainCompilation(parseInt(i) + 1);
-                    setArrCompilationFourCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationFiveCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationSixCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationSevenCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationEightCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                } else if (i >= 4 && i < 5) {
-                    setMaxObtainCompilation(parseInt(i) + 1);
-                    setArrCompilationFiveCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationSixCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationSevenCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationEightCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                } else if (i >= 5 && i < 6) {
-                    setMaxObtainCompilation(parseInt(i) + 1);
-                    setArrCompilationSixCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationSevenCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationEightCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                } else if (i >= 6 && i < 7) {
-                    setMaxObtainCompilation(parseInt(i) + 1);
-                    setArrCompilationSevenCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                    setArrCompilationEightCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                } else if (i >= 7 && i < 8) {
-                    setMaxObtainCompilation(parseInt(i) + 1);
-                    setArrCompilationEightCard(prev => [...prev, {
-                        'year': extractYear(compilation[i].release_date),
-                        'month': extractMonth(compilation[i].release_date),
-                        'day': extractDay(compilation[i].release_date),
-                        'album': {
-                            'album_type': compilation[i].album_type,
-                            'id': compilation[i].id,
-                            'name': compilation[i].name,
-                            'release_date': compilation[i].release_date,
-                            'total_tracks': compilation[i].total_tracks,
-                            'uri': compilation[i].uri
-                        },
-                        'image': compilation[i].images[0].url
-                    }]);
-                } else {
-                    setIsCompilationMore(true);
-                }
-
-                // setArrCompilation(prev => [...prev, {
-                //     'year': extractYear(compilation[i].release_date),
-                //     'month': extractMonth(compilation[i].release_date),
-                //     'day': extractDay(compilation[i].release_date),
-                //     'album': {
-                //         'album_type': compilation[i].album_type,
-                //         'id': compilation[i].id,
-                //         'name': compilation[i].name,
-                //         'release_date': compilation[i].release_date,
-                //         'total_tracks': compilation[i].total_tracks,
-                //         'uri': compilation[i].uri
-                //     },
-                //     'image': compilation[i].images[0].url
-                // }])
+                setMaxObtainCompilation(parseInt(i) + 1);
+                setArrCompilationEightCard(prev => [...prev, {
+                    'year': extractYear(compilation[i].release_date),
+                    'month': extractMonth(compilation[i].release_date),
+                    'day': extractDay(compilation[i].release_date),
+                    'album': {
+                        'album_type': compilation[i].album_type,
+                        'id': compilation[i].id,
+                        'name': compilation[i].name,
+                        'release_date': compilation[i].release_date,
+                        'total_tracks': compilation[i].total_tracks,
+                        'uri': compilation[i].uri
+                    },
+                    'image': compilation[i].images[0].url
+                }]);
             }
 
         }
@@ -1588,16 +348,16 @@ const SearchArtist = (props) => {
                             )
                         )}
                     </div>
-                    {arrAlbumTwoCard.length === 0
+                    {arrAlbumEightCard.length === 0
                         ? ''
                         :
                         <>
                             <div className='artist-lower-box__title-container'>
                                 <h5 className='artist-lower-box__title__result'>Albums</h5>
-                                {(arrAlbumTwoCard.length < maxObtainAlbum || isMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/albums`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrAlbumEightCard.slice(0, 2).length < maxObtainAlbum) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/albums`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrAlbumTwoCard.map(elem => 
+                                {arrAlbumEightCard.slice(0, 2).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -1619,16 +379,16 @@ const SearchArtist = (props) => {
                         </>
 
                     }
-                    {arrSingleTwoCard.length === 0
+                    {arrSingleEightCard.length === 0
                         ? ''
                         :
                         <>
                             <div className='artist-lower-box__title-container'>
                                 <h5 className='artist-lower-box__title__result'>Single</h5>
-                                {(arrSingleTwoCard.length < maxObtainSingle || isSingleMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/singles`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrSingleEightCard.slice(0, 2).length < maxObtainSingle) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/singles`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrSingleTwoCard.map(elem => 
+                                {arrSingleEightCard.slice(0, 2).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -1651,16 +411,16 @@ const SearchArtist = (props) => {
 
                     }
                     
-                    {arrCompilationTwoCard.length === 0
+                    {arrCompilationEightCard.length === 0
                         ? ''
                         : 
                         <div>
                             <div className='artist-lower-box__compilation-title'>
                                 <h5 className='artist-lower-box__compilation'>Compilations</h5>
-                                {(arrCompilationTwoCard.length < maxObtainCompilation || isCompilationMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/compilations`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrCompilationEightCard.slice(0, 2).length < maxObtainCompilation) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/compilations`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrCompilationTwoCard.map(elem => 
+                                {arrCompilationEightCard.slice(0, 2).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -1720,16 +480,16 @@ const SearchArtist = (props) => {
                             )
                         )}
                     </div>
-                    {arrAlbumThreeCard.length === 0
+                    {arrAlbumEightCard.length === 0
                         ? ''
                         : 
                         <>
                             <div className='artist-lower-box__title-container'>
                                 <h5 className='artist-lower-box__title__result'>Albums</h5>
-                                {(arrAlbumThreeCard.length < maxObtainAlbum || isMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/albums`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrAlbumEightCard.slice(0, 3).length < maxObtainAlbum) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/albums`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrAlbumThreeCard.map(elem => 
+                                {arrAlbumEightCard.slice(0, 3).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -1750,16 +510,16 @@ const SearchArtist = (props) => {
                             </div>
                         </>
                     }
-                    {arrSingleThreeCard.length === 0
+                    {arrSingleEightCard.length === 0
                         ? ''
                         : 
                         <>
                             <div className='artist-lower-box__title-container'>
                                 <h5 className='artist-lower-box__title__result'>Single</h5>
-                                {(arrSingleThreeCard.length < maxObtainSingle || isSingleMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/singles`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrSingleEightCard.slice(0, 3).length < maxObtainSingle) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/singles`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrSingleThreeCard.map(elem => 
+                                {arrSingleEightCard.slice(0, 3).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -1781,16 +541,16 @@ const SearchArtist = (props) => {
                         </>
 
                     }
-                    {arrCompilationThreeCard.length === 0 
+                    {arrCompilationEightCard.length === 0 
                         ? ''
                         : 
                         <div>
                             <div className='artist-lower-box__compilation-title'>
                                 <h5 className='artist-lower-box__compilation'>Compilations</h5>
-                                {(arrCompilationThreeCard.length < maxObtainCompilation || isCompilationMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/compilations`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrCompilationEightCard.slice(0, 3).length < maxObtainCompilation) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/compilations`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrCompilationThreeCard.map(elem => 
+                                {arrCompilationEightCard.slice(0, 3).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -1850,16 +610,16 @@ const SearchArtist = (props) => {
                             )
                         )}
                     </div>
-                    {arrAlbumFourCard.length === 0
+                    {arrAlbumEightCard.length === 0
                         ? ''
                         : 
                         <>
                             <div className='artist-lower-box__title-container'>
                                 <h5 className='artist-lower-box__title__result'>Albums</h5>
-                                {(arrAlbumFourCard.length < maxObtainAlbum || isMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/albums`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrAlbumEightCard.slice(0, 4).length < maxObtainAlbum) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/albums`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrAlbumFourCard.map(elem => 
+                                {arrAlbumEightCard.slice(0, 4).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -1880,16 +640,16 @@ const SearchArtist = (props) => {
                             </div>
                         </>
                     }
-                    {arrSingleFourCard.length === 0
+                    {arrSingleEightCard.length === 0
                         ? ''
                         :
                         <>
                             <div className='artist-lower-box__title-container'>
                                 <h5 className='artist-lower-box__title__result'>Single</h5>
-                                {(arrSingleFourCard.length < maxObtainSingle || isSingleMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/singles`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrSingleEightCard.slice(0, 4).length < maxObtainSingle) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/singles`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrSingleFourCard.map(elem => 
+                                {arrSingleEightCard.slice(0, 4).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -1911,16 +671,16 @@ const SearchArtist = (props) => {
                         </>
                     }
                     
-                    {arrCompilationFourCard.length === 0 
+                    {arrCompilationEightCard.length === 0 
                         ? ''
                         : 
                         <div>
                             <div className='artist-lower-box__compilation-title'>
                                 <h5 className='artist-lower-box__compilation'>Compilations</h5>
-                                {(arrCompilationFourCard.length < maxObtainCompilation || isCompilationMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/compilations`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrCompilationEightCard.slice(0, 4).length < maxObtainCompilation) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/compilations`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrCompilationFourCard.map(elem => 
+                                {arrCompilationEightCard.slice(0, 4).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -1980,16 +740,16 @@ const SearchArtist = (props) => {
                             )
                         )}
                     </div>
-                    {arrAlbumFiveCard.length === 0
+                    {arrAlbumEightCard.length === 0
                         ? ''
                         :
                         <>
                             <div className='artist-lower-box__title-container'>
                                 <h5 className='artist-lower-box__title__result'>Albums</h5>
-                                {(arrAlbumFiveCard.length < maxObtainAlbum || isMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/albums`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrAlbumEightCard.slice(0, 5).length < maxObtainAlbum) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/albums`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrAlbumFiveCard.map(elem => 
+                                {arrAlbumEightCard.slice(0, 5).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -2010,16 +770,16 @@ const SearchArtist = (props) => {
                             </div>
                         </>
                     }
-                    {arrSingleFiveCard.length === 0
+                    {arrSingleEightCard.length === 0
                         ? ''
                         :
                         <>
                             <div className='artist-lower-box__title-container'>
                                 <h5 className='artist-lower-box__title__result'>Single</h5>
-                                {(arrSingleFiveCard.length < maxObtainSingle || isSingleMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/singles`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrSingleEightCard.slice(0, 5).length < maxObtainSingle) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/singles`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrSingleFiveCard.map(elem => 
+                                {arrSingleEightCard.slice(0, 5).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -2040,16 +800,16 @@ const SearchArtist = (props) => {
                             </div>
                         </>
                     }
-                    {arrCompilationFiveCard.length === 0 
+                    {arrCompilationEightCard.length === 0 
                         ? ''
                         : 
                         <div>
                             <div className='artist-lower-box__compilation-title'>
                                 <h5 className='artist-lower-box__compilation'>Compilations</h5>
-                                {(arrCompilationFiveCard.length < maxObtainCompilation || isCompilationMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/compilations`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrCompilationEightCard.slice(0, 5).length < maxObtainCompilation) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/compilations`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrCompilationFiveCard.map(elem => 
+                                {arrCompilationEightCard.slice(0, 5).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -2109,16 +869,16 @@ const SearchArtist = (props) => {
                             )
                         )}
                     </div>
-                    {arrAlbumSixCard.length === 0
+                    {arrAlbumEightCard.length === 0
                         ? ''
                         :
                         <>
                             <div className='artist-lower-box__title-container'>
                                 <h5 className='artist-lower-box__title__result'>Albums</h5>
-                                {(arrAlbumSixCard.length < maxObtainAlbum || isMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/albums`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrAlbumEightCard.slice(0, 6).length < maxObtainAlbum) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/albums`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrAlbumSixCard.map(elem => 
+                                {arrAlbumEightCard.slice(0, 6).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -2139,16 +899,16 @@ const SearchArtist = (props) => {
                             </div>
                         </>
                     }
-                    {arrSingleSixCard.length === 0 
+                    {arrSingleEightCard.length === 0 
                         ? ''
                         : 
                         <>
                             <div className='artist-lower-box__title-container'>
                                 <h5 className='artist-lower-box__title__result'>Single</h5>
-                                {(arrSingleSixCard.length < maxObtainSingle || isSingleMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/singles`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrSingleEightCard.slice(0, 6).length < maxObtainSingle) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/singles`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrSingleSixCard.map(elem => 
+                                {arrSingleEightCard.slice(0, 6).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -2170,16 +930,16 @@ const SearchArtist = (props) => {
                         </>
 
                     }
-                    {arrCompilationSixCard.length === 0 
+                    {arrCompilationEightCard.length === 0 
                         ? ''
                         : 
                         <div>
                             <div className='artist-lower-box__compilation-title'>
                                 <h5 className='artist-lower-box__compilation'>Compilations</h5>
-                                {(arrCompilationSixCard.length < maxObtainCompilation || isCompilationMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/compilations`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrCompilationEightCard.slice(0, 6).length < maxObtainCompilation) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/compilations`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrCompilationSixCard.map(elem => 
+                                {arrCompilationEightCard.slice(0, 6).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -2240,16 +1000,16 @@ const SearchArtist = (props) => {
                             )
                         )}
                     </div>
-                    {arrAlbumSevenCard.length === 0
+                    {arrAlbumEightCard.length === 0
                         ? ''
                         :
                         <>
                             <div className='artist-lower-box__title-container'>
                                 <h5 className='artist-lower-box__title__result'>Albums</h5>
-                                {(arrAlbumSevenCard.length < maxObtainAlbum || isMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/albums`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrAlbumEightCard.slice(0, 7).length < maxObtainAlbum) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/albums`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrAlbumSevenCard.map(elem => 
+                                {arrAlbumEightCard.slice(0, 7).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -2270,16 +1030,16 @@ const SearchArtist = (props) => {
                             </div>
                         </>
                     }
-                    {arrSingleSevenCard.length === 0
+                    {arrSingleEightCard.length === 0
                         ? ''
                         : 
                         <>
                             <div className='artist-lower-box__title-container'>
                                 <h5 className='artist-lower-box__title__result'>Single</h5>
-                                {(arrSingleSevenCard.length < maxObtainSingle || isSingleMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/singles`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrSingleEightCard.slice(0, 7).length < maxObtainSingle) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/singles`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrSingleSevenCard.map(elem => 
+                                {arrSingleEightCard.slice(0, 7).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -2301,16 +1061,16 @@ const SearchArtist = (props) => {
                         </>
                     }
                     
-                    {arrCompilationSevenCard.length === 0 
+                    {arrCompilationEightCard.length === 0 
                         ? ''
                         : 
                         <div>
                             <div className='artist-lower-box__compilation-title'>
                                 <h5 className='artist-lower-box__title__result'>Compilations</h5>
-                                {(arrCompilationSevenCard.length < maxObtainCompilation || isCompilationMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/compilations`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrCompilationEightCard.slice(0, 7).length < maxObtainCompilation) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/compilations`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrCompilationSevenCard.map(elem => 
+                                {arrCompilationEightCard.slice(0, 7).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -2376,10 +1136,10 @@ const SearchArtist = (props) => {
                         <>
                             <div className='artist-lower-box__title-container'>
                                 <h5 className='artist-lower-box__title__result'>Albums</h5>
-                                {(arrAlbumEightCard.length < maxObtainAlbum || isMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/albums`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrAlbumEightCard.slice(0, 8).length < maxObtainAlbum) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/albums`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrAlbumEightCard.map(elem => 
+                                {arrAlbumEightCard.slice(0, 8).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -2406,10 +1166,10 @@ const SearchArtist = (props) => {
                         <>
                             <div className='artist-lower-box__title-container'>
                                 <h5 className='artist-lower-box__title__result'>Single</h5>
-                                {(arrSingleEightCard.length < maxObtainSingle || isSingleMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/singles`, {state: searchTerm}); }}>See More</p> : ''}
+                                {(arrSingleEightCard.slice(0, 8).length < maxObtainSingle) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/singles`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrSingleEightCard.map(elem => 
+                                {arrSingleEightCard.slice(0, 8).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>
@@ -2435,11 +1195,11 @@ const SearchArtist = (props) => {
                         : 
                         <div>
                             <div className='artist-lower-box__compilation-title'>
-                                <h5 className='artist-lower-box__compilation'>Compilations {arrCompilationSixCard.length}, {maxObtainCompilation}</h5>
-                                {(arrCompilationEightCard.length < maxObtainCompilation || isCompilationMore) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/compilations`, {state: searchTerm}); }}>See More</p> : ''}
+                                <h5 className='artist-lower-box__compilation'>Compilations</h5>
+                                {(arrCompilationEightCard.slice(0, 8).length < maxObtainCompilation) ?  <p className='more' onClick={() => {navigate(`/search/artist/${id}/compilations`, {state: searchTerm}); }}>See More</p> : ''}
                             </div>
                             <div className='artist-lower-box__album__result'>
-                                {arrCompilationEightCard.map(elem => 
+                                {arrCompilationEightCard.slice(0, 8).map(elem => 
                                     (
                                         <>
                                             <div className='box-container__result'>

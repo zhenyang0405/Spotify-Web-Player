@@ -9,8 +9,6 @@ import icon_playlist from '../images/icons8-chord-96.png';
 import { useWindowDimensions } from '../functions/custom-hook';
 import './css/interface.css';
 
-// const axios = require('axios')
-
 const SideMenu = (props) => {
     const { height, width } = useWindowDimensions();
 

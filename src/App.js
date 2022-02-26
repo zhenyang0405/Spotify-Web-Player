@@ -21,8 +21,6 @@ function App() {
     <>
       { (token === '') ? <Login /> : <Interface token={token} /> }
     </>
-    // <div className='app-container'> 
-    // {/* </div> */}
   );
 }
 

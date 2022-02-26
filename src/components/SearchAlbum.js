@@ -21,10 +21,6 @@ const SearchAlbum = (props) => {
 
     const searchTerm = location.state[0];
 
-    const handleGoBack = () => {
-        navigate('/search', {state: searchTerm});
-    }
-
     useEffect(() => {
         setAlbumID(id);
     }, [])
