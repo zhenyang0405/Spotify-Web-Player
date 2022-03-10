@@ -4,10 +4,6 @@ I build a Spotify Web-based Player that Spotify premium users can log in to list
 
 ## How it works
 
-https://user-images.githubusercontent.com/41467740/157627196-2448b404-079b-438b-ade7-84b8775bd128.mp4
-
-
-
 To login into the Spotify Web Player, the user must be a Spotify Premium User. By clicking the login button, the user will have to agree to log in using your Spotify account.
 
 Once successfully login, you will be redirected to the home page of Spotify Web Player.
