@@ -2,6 +2,11 @@
 
 I build a Spotify Web-based Player that Spotify premium users can log in to listen to music from any device. The user is able to view his/her recently played songs directly from the home page. Find out he/her favorite artists and top songs on the Profile page. View a list of playlists on the Playlist page.
 
+<img width="1800" alt="spotify-home" src="https://user-images.githubusercontent.com/41467740/157628233-fbd8317c-4026-468e-aaf7-dcccb30ac5a0.png">
+<img width="1800" alt="spotify-search" src="https://user-images.githubusercontent.com/41467740/157628255-f3686a21-7963-4b6b-85b3-3a86a21660b7.png">
+<img width="1800" alt="spotify-profile" src="https://user-images.githubusercontent.com/41467740/157628277-417114ac-a7f8-4181-9182-d7664e435c84.png">
+<img width="1800" alt="spotify-playlist" src="https://user-images.githubusercontent.com/41467740/157628265-a0fcfefa-fcac-424d-b230-9b55562e6aac.png">
+
 ## How it works
 
 To login into the Spotify Web Player, the user must be a Spotify Premium User. By clicking the login button, the user will have to agree to log in using your Spotify account.
